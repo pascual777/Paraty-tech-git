@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuarios Conectados</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; color: #333; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Usuarios Conectados</h1>
+    <ul>
+        {% for connection in connections %}
+        <li>{{ connection.user_from.username }} connected to {{ connection.user_to.username }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+
