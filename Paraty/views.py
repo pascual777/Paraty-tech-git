@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .forms import CustomUserCreationForm  # Asume que tienes un formulario personalizado
+from .forms import CustomUserCreationForm 
 from .models import UserConnection  
 from django.contrib.auth.models import User
 
@@ -13,14 +13,14 @@ def add_user(request):
         if form.is_valid():
             user = form.save()
             messages.success(request, 'Usuario creado correctamente.')
-            return redirect('index')  # Asegúrate de que 'index' es la URL correcta
+            return redirect('index') 
         else:
             # Este bucle recorre los errores y los agrega a los mensajes para mostrar en la plantilla
             for field, errors in form.errors.items():
                 for error in errors:
                     messages.error(request, f"Error en {field}: {error}")
     else:
-        form = CustomUserCreationForm()  # Usa el formulario personalizado aquí también
+        form = CustomUserCreationForm()  
     return render(request, 'add_user.html', {'form': form})
 
 def add_connection(request, user_id):
@@ -30,7 +30,7 @@ def add_connection(request, user_id):
         messages.success(request, "Conexión añadida correctamente.")
     except User.DoesNotExist:
         messages.error(request, "El usuario especificado no existe.")
-    return redirect('index')  # Asegúrate de que 'index' es la URL correcta
+    return redirect('index')  
 
 def connected_users(request):
     connections = UserConnection.objects.all()
