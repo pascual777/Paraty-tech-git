@@ -1,6 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+<<<<<<< HEAD
 from .forms import CustomUserCreationForm  
+=======
+from .forms import CustomUserCreationForm 
+>>>>>>> 6b66b73d0d5cc3381b0b3a82adeafb214931fa61
 from .models import UserConnection  
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
@@ -15,7 +19,11 @@ def add_user(request):
         if form.is_valid():
             user = form.save()
             messages.success(request, 'Usuario creado correctamente.')
+<<<<<<< HEAD
             return redirect('index')  
+=======
+            return redirect('index') 
+>>>>>>> 6b66b73d0d5cc3381b0b3a82adeafb214931fa61
         else:
             
             for field, errors in form.errors.items():

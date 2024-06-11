@@ -77,9 +77,19 @@ WSGI_APPLICATION = 'Paraty.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
+<<<<<<< HEAD
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+=======
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "Paraty",
+        "USER": "postgres",
+        "PASSWORD": "",
+        "HOST": "127.0.0.1",
+        "PORT": "5432",
+>>>>>>> 6b66b73d0d5cc3381b0b3a82adeafb214931fa61
     }
 }
 
